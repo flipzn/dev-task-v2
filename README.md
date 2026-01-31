@@ -2,6 +2,9 @@
 
 This is a simple API sample in Node.js with express.js.
 
+## Prerequisites
+- Node.js 20 or above.
+
 ## Getting Started
 Look in the `package.json` to see available scripts.
 
