@@ -7,16 +7,25 @@
   "scripts": {
     "dev": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'npm run build && npm run start'",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node --env-file=.env dist/index.js",
+    "test": "node --env-file=.env dist/test.js",
+    "start-tunnel-test-random": "TEST_POSITIVE=0 node start-with-tunnel",
+    "start-tunnel-test-positive": "TEST_POSITIVE=1 node start-with-tunnel"
   },
   "author": "Google LLC",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.21.2"
+    "@types/body-parser": "^1.19.6",
+    "@types/node-fetch": "^2.6.13",
+    "body-parser": "^2.2.2",
+    "express": "^4.21.2",
+    "localtunnel": "^2.0.2",
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
+    "@types/node": "^20.12.12",
     "nodemon": "^3.1.0",
-    "typescript": "^5.4.5",
-    "@types/node": "^20.12.12"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }
